@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shop - Mytalorzone</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <style>
+            /* Centering the category section and styling category buttons */
+            #categories {
+                text-align: center;
+                padding: 50px 0;
+            }
+
+            .category-list {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .category-btn {
+                background-color: #f8f8f8;
+                border: 2px solid #ddd;
+                padding: 15px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+                text-align: center;
+                width: 120px;
+                height: 120px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+            }
+
+            .category-btn img {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+            }
+
+            .category-btn:hover {
+                transform: scale(1.1);
+            }
+
+            .category-btn span {
+                margin-top: 10px;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            /* Styling for Product Size Selection */
+            .size-select {
+                margin: 10px 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            .size-select select {
+                padding: 8px 15px;
+                font-size: 16px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            /* Styling for Star Ratings */
+            .rating {
+                display: flex;
+                gap: 5px;
+            }
+
+            .rating i {
+                font-size: 20px;
+                color: #f5a623;
+                cursor: pointer;
+            }
+
+            .rating i.inactive {
+                color: #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header Section -->
+        <section id="header">
+            <a href="index.html"><img src="img/Mytalorzone logo 1.png" class="logo" alt="Mytalorzone Logo"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html"><i class="bi bi-bag"></i> <span id="cart-count">0</span></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories">
+            <h2>Shop by Category</h2>
+            <div class="category-list">
+                <button class="category-btn" onclick="filterByCategory('formal')">
+                    <img src="img/corporate-wear-dress.jpeg" alt="Formal">
+                    <span>Formal</span>
+                </button>
+                <button class="category-btn" onclick="filterByCategory('casual')">
+                    <img src="img/casual dress.jpg" alt="Casual">
+                    <span>Casual</span>
+                </button>
+                <button class="category-btn" onclick="filterByCategory('nightwear')">
+                    <img src="img/night suit.jpg" alt="Nightwear">
+                    <span>Night Wear</span>
+                </button>
+                <button class="category-btn" onclick="filterByCategory('partywear')">
+                    <img src="img/party waer.jpg" alt="Party Wear">
+                    <span>Party Wear</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Main Shop Section -->
+        <main>
+            <h2>Shop Our Collection</h2>
+            <div class="products">
+                <!-- Formal Category -->
+                <div class="product formal">
+                    <img src="img/formal shirt.jpg" alt="Formal Shirt">
+                    <h3>Formal Shirt</h3>
+                    <p>$100</p>
+                    <!-- Size Selection -->
+                    <div class="size-select">
+                        <select>
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                            <option value="xl">X-Large</option>
+                        </select>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Formal Shirt', 100)">Add to Cart</button>
+                </div>
+                <div class="product formal">
+                    <img src="img/formal pant.jpg" alt="Formal Pants">
+                    <h3>Formal Pants</h3>
+                    <p>$90</p>
+                    <!-- Size Selection -->
+                    <div class="size-select">
+                        <select>
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                            <option value="xl">X-Large</option>
+                        </select>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Formal Pants', 90)">Add to Cart</button>
+                </div>
+
+                <!-- Casual Category -->
+                <div class="product casual">
+                    <img src="img/tshirt.jpg" alt="Casual T-shirt">
+                    <h3>Casual T-shirt</h3>
+                    <p>$90</p>
+                    <!-- Size Selection -->
+                    <div class="size-select">
+                        <select>
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                            <option value="xl">X-Large</option>
+                        </select>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Casual T-shirt', 50)">Add to Cart</button>
+                </div>
+                <div class="product casual">
+                    <img src="img/casual jeans.jpg" alt="Casual Jeans">
+                    <h3>Casual Jeans</h3>
+                    <p>$60</p>
+                    <!-- Size Selection -->
+                    <div class="size-select">
+                        <select>
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                            <option value="xl">X-Large</option>
+                        </select>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Casual Jeans', 60)">Add to Cart</button>
+                </div>
+
+                <!-- Nightwear Category -->
+                <div class="product nightwear">
+                    <img src="img/night suit.jpg" alt="Night Dress">
+                    <h3>Night Dress</h3>
+                    <p>$40</p>
+                    <!-- Size Selection -->
+                    <div class="size-select">
+                        <select>
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                            <option value="xl">X-Large</option>
+                        </select>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Night Dress', 40)">Add to Cart</button>
+                </div>
+                <div class="product nightwear">
+                    <img src="img/pj set.jpg" alt="Pajama Set">
+                    <h3>Pajama Set</h3>
+                    <p>$45</p>
+                    <!-- Size Selection -->
+                    <div class="size-select">
+                        <select>
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                            <option value="xl">X-Large</option>
+                        </select>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Pajama Set', 45)">Add to Cart</button>
+                </div>
+
+                <!-- Partywear Category -->
+                <div class="product partywear">
+                    <img src="img/party waer.jpg" alt="Party Dress">
+                    <h3>Party Dress</h3>
+                    <p>$120</p>
+                    <!-- Size Selection -->
+                    <div class="size-select">
+                        <select>
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                            <option value="xl">X-Large</option>
+                        </select>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Party Dress', 120)">Add to Cart</button>
+                </div>
+                <div class="product partywear">
+                    <img src="img/gown.jpg" alt="Evening Gown">
+                    <h3>Evening Gown</h3>
+                    <p>$90</p>
+                    <!-- Size Selection -->
+                    <div class="size-select">
+                        <select>
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                            <option value="xl">X-Large</option>
+                        </select>
+                    </div>
+                    <!-- Star Rating -->
+                    <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Evening Gown', 150)">Add to Cart</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="section-p1">
+            <div class="content-row">
+                <div class="col contact">
+                    <img class="logo" src="img/Mytalorzone logo 1.png" alt="" style="width: 100px; height: auto; padding: 10px;">
+                    <h4>Contact</h4>
+                    <p><strong>Address:</strong> Sri Sai Avenue, 2nd main road, Puthur Mappedu, Chennai</p>
+                    <p><strong>Hours:</strong> 10:00 - 20:00, Mon - Fri</p>
+                    <p><strong>Phone:</strong> +91 9566078581</p>
+                </div>
+                <div class="col about">
+                    <h4>About</h4>
+                    <a href="#">About us</a>
+                    <a href="#">Delivery Information</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms and Condition</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="col my-account">
+                    <h4>My Account</h4>
+                    <a href="#">Sign In</a>
+                    <a href="#">View Cart</a>
+                    <a href="#">My Wishlist</a>
+                    <a href="#">Track my Order</a>
+                    <a href="#">Help</a>
+                </div>
+                <div class="col install">
+                    <h4>Install App</h4>
+                    <p>From App Store or Google</p>
+                    <div class="row">
+                        <img src="img/app.jpg" alt="">
+                        <img src="img/play.jpg" alt="">
+                    </div>
+                    <p>Secured Payment Gateways</p>
+                    <img src="img/pay.png" alt="">
+                </div>
+            </div>
+            <div class="content-row follow-us">
+                <div class="col">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-youtube"></i>
+                        <i class="bi bi-twitter"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2024 Mytalorzone. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <!-- JavaScript for Cart Functionality and Category Filtering -->
+        <script>
+            // Load cart from localStorage if available
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            function addToCart(product, price) {
+                cart.push({ product, price });
+                updateCart();
+                // Save cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+
+            function updateCart() {
+                const cartCount = document.getElementById('cart-count');
+                cartCount.textContent = cart.length;
+            }
+
+            // Function to filter products by category
+            function filterByCategory(category) {
+                const allProducts = document.querySelectorAll('.product');
+                allProducts.forEach(product => {
+                    if (product.classList.contains(category) || category === 'all') {
+                        product.style.display = 'block'; // Show the product
+                    } else {
+                        product.style.display = 'none'; // Hide the product
+                    }
+                });
+            }
+
+            // Update cart on page load (if any cart items exist)
+            window.onload = updateCart;
+        </script>
+    </body>
+</html>
